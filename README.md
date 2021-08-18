@@ -12,7 +12,7 @@ Steps required before running the application:
 
 Let's clone the repo first.
 
-You have to add the Secret key for the django application create the .env file and setup the values as
+You have to add the Secret key for the django application create the .env file(you have to create one in inside the fam_pay_test folder) and setup the values as
 ```
 SECRET_KEY= XYZ
 DEBUG=TRUE
