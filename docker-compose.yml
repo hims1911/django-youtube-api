@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+  app:
+    build: .
+    command: bash -c "python manage.py makemigrations && python manage.py migrate && python manage.py runserver 0.0.0.0:8888"
+    container_name : web-app
+    volumes :
+      - .:/fam_pay_test
+    ports:
+      - "8888-8888"
+  redis:
+    image: redis:alpine
+  celery:
+    build: .
+    command: celery -A fam_pay_test worker -l info -B
+    volumes :
+      - .:/fam_pay_test
+    depends_on:
+      - app
+      - redis
