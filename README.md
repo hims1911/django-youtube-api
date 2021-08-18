@@ -16,6 +16,7 @@ You have to add the Secret key for the django application create the .env file a
 ```
 SECRET_KEY= XYZ
 DEBUG=TRUE
+API_KEY=KEY1,KEY2,...
 ```
 PS : jst ping me for that.
 
@@ -26,24 +27,32 @@ My Twitter handle - H1mSR0cK / https://twitter.com/H1mSR0cK
 ## Docker way:
 
 First let just build the container 
-
 ```
-sudo docker-compose build -d 
-```
-
-then 
-
-```
-sudo docker-compose up
+sudo docker-compose build
 ```
 
-Open the logs associated with the celery service: 
-
 ```
-docker-compose logs -f 'celery'
+sudo docker-compose up -d
 ```
 
-Access the application via,
+to get the running containers
+```
+sudo docker ps
+```
 
-localhost:88888/
+get the container ID and then
 
+```
+sudo docker inspect ID
+```
+
+
+It will give the IP address 
+
+Queries:
+
+to get the videos list : 
+```IP:88888/api/videos```
+<br>
+to perform search:
+```IP:8888/api/videos?title=valuex1description=value2```
