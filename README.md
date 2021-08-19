@@ -55,4 +55,4 @@ to get the videos list :
 ```IP:88888/api/videos```
 <br>
 to perform search:
-```IP:8888/api/videos?title=valuex1description=value2```
+```IP:8888/api/videos?title=value1&description=value2```
